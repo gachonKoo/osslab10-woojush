@@ -1,15 +1,9 @@
-# lab10.py
 import sys
 
-def get_divisors(n: int):
-    return [i for i in range(1, n+1) if n % i == 0]
+number = int(sys.argv[1])  # 명령행 인자 입력
 
-def main():
-    if len(sys.argv) >= 2:
-        n = int(sys.argv[1])          # 자동채점용: argv로 받음
-    else:
-        n = int(sys.stdin.readline())  # 로컬 테스트용: 입력 한 줄
-    print(*get_divisors(n))            # 약수만 공백으로 출력
+for i in range(1, number + 1):  # 1부터 number까지 반복
+    if number % i == 0:         # 나머지가 0이면 약수
+        print(i, end=" ")
 
-if __name__ == "__main__":
-    main()
+print()
